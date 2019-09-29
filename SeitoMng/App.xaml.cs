@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SeitoMng.Views;
+using SeitoMng.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +24,11 @@ namespace SeitoMng
     /// </summary>
     sealed partial class App : Application
     {
+
+
+        public static ViewModelMain ViewModel { get; } = new ViewModelMain();
+
+
         /// <summary>
         ///単一アプリケーション オブジェクトを初期化します。これは、実行される作成したコードの
         ///最初の行であるため、論理的には main() または WinMain() と等価です。
@@ -66,7 +73,7 @@ namespace SeitoMng
                     // ナビゲーションの履歴スタックが復元されていない場合、最初のページに移動します。
                     // このとき、必要な情報をナビゲーション パラメーターとして渡して、新しいページを
                     // 作成します
-                    rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                    rootFrame.Navigate(typeof(ListSeito), e.Arguments);
                 }
                 // 現在のウィンドウがアクティブであることを確認します
                 Window.Current.Activate();
