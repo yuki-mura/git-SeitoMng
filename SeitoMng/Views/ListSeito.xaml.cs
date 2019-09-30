@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeitoMng.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -26,5 +27,8 @@ namespace SeitoMng.Views
         {
             this.InitializeComponent();
         }
+
+        public ViewModelMain ViewModel => App.ViewModel;
+
     }
 }
